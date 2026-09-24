@@ -1,0 +1,26 @@
+# メディア完成品はGit管理しない(リポジトリ外 / GCS / Drive に置く)
+bgm-assets/
+assets/
+
+# 念のため拡張子でも除外(誤ってリポジトリ内に置いた場合の保険)
+*.wav
+*.mp3
+*.flac
+*.aiff
+*.mp4
+*.mov
+*.mkv
+*.webm
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
+*.psd
+
+# OS / エディタ
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/

@@ -1,0 +1,14 @@
+# Midjourney プロンプト記録
+# 形式は ../prompts/_schema.md を参照。winner / testing / rejected を status で区別する。
+# ↓ 下記はフォーマットを示すサンプル。実際の記録に置き換えてください。
+# キービジュアルは「音の世界観と揃える」「seed/styleを使い回して画風を統一する」が原則。
+
+- id: 2026-06-14-101
+  tool: midjourney
+  status: testing
+  rating: 3
+  genre: lofi
+  prompt: "cozy dim study room at night, rain on the window, warm desk lamp, lo-fi anime aesthetic, soft film grain, muted palette --ar 16:9"
+  params: { seed: null }
+  note: "サンプル。雰囲気は良いが構図が広すぎる。寄りの構図を試す"
+  date: 2026-06-14

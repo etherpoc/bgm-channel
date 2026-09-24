@@ -1,0 +1,54 @@
+# Lyria 3 プロンプト記録
+# 形式は ./_schema.md を参照。winner / testing / rejected を status で区別する。
+# 改善派生は parent(起点id)と changed(変更点1語)で系譜を残す。
+# ↓ 下記はフォーマットを示すサンプル。実際の記録に置き換えてください。
+
+# --- 起点 ---
+- id: 2026-06-14-001
+  tool: lyria3
+  status: testing
+  rating: 4
+  genre: lofi
+  prompt: >
+    Warm lo-fi hip-hop for deep focus, around 70 BPM, mellow and steady.
+    Dusty Rhodes piano chords, muted boom-bap drums, warm sub bass,
+    light vinyl crackle and subtle tape hiss. Relaxed, smoothly looping groove.
+    Instrumental, no vocals.
+  negative: "no vocals, no tempo changes, no harsh transitions, no bright synths"
+  params: { seed: null }
+  note: "サンプル。初手の当たりを想定。Rhodesの温かさが核か要検証"
+  date: 2026-06-14
+
+# --- 派生(1変数だけ変更:BPM) ---
+- id: 2026-06-15-002
+  parent: 2026-06-14-001
+  changed: "tempo 70->65"
+  tool: lyria3
+  status: testing
+  rating: 4
+  genre: lofi
+  prompt: >
+    Warm lo-fi hip-hop for deep focus, around 65 BPM, mellow and steady.
+    Dusty Rhodes piano chords, muted boom-bap drums, warm sub bass,
+    light vinyl crackle and subtle tape hiss. Relaxed, smoothly looping groove.
+    Instrumental, no vocals.
+  negative: "no vocals, no tempo changes, no harsh transitions, no bright synths"
+  params: { seed: null }
+  note: "サンプル(派生)。BPMのみ65に。沈み込みは増すが眠さ手前。テンポは本質でないかも"
+  date: 2026-06-15
+
+# --- 却下例 ---
+- id: 2026-06-15-003
+  parent: 2026-06-14-001
+  changed: "mood bright, tempo 70->95"
+  tool: lyria3
+  status: rejected
+  rating: 2
+  genre: lofi
+  prompt: >
+    Upbeat lo-fi hip-hop, around 95 BPM, bright and energetic.
+    Crisp drums, plucky synth lead. Instrumental, no vocals.
+  negative: "no vocals"
+  params: { seed: null }
+  note: "サンプル(却下)。明るさとBPMが作業の邪魔。lofiは遅め・落ち着き重視で確定"
+  date: 2026-06-15
